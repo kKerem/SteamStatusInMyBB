@@ -1,4 +1,9 @@
 $uidhesap = $mybb->get_input('uid', MyBB::INPUT_INT);
+	$b=mysql_connect("host","id","pw");
+	mysql_select_db("db",$b);
+	mysql_query("SET NAMES 'utf8'");
+	mysql_query("SET CHARACTER SET utf8_general_ci");
+	$m=mysql_query("SELECT username, uid, email FROM mybb_users Where uid='$uidhesap'");
 
 	while($y=mysql_fetch_array($m))
 	{
